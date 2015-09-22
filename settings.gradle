@@ -1,0 +1,4 @@
+include ':app', ':library:poke', ':library:android-mvc-controller', ':library:android-mvc'
+project(':library:poke').projectDir = new File('libs/poke')
+project(':library:android-mvc-controller').projectDir = new File('libs/android-mvc-controller')
+project(':library:android-mvc').projectDir = new File('libs/android-mvc')

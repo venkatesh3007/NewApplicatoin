@@ -1,0 +1,55 @@
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+def log4jVersion = '1.7.6'
+def logbackAndroidVersion = '1.1.1-4'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'xyz.shipdream'
+    PUBLISH_ARTIFACT_ID = 'android-mvc'
+    PUBLISH_VERSION = '1.2.0'
+    siteUrl = 'https://github.com/kejunxia/AndroidMvc'      // Homepage URL of the library
+    gitUrl = 'https://github.com/kejunxia/AndroidMvc.git'   // Git repository URL
+    version = [
+            major: 1,
+            minor: 2,
+            patch : 0
+    ]
+    libGroup = 'xyz.shipdream'
+    libVersion = "${version.major}.${version.minor}.${version.patch}"
+    shouldPublish = false
+
+    androidMinSdkVersion = 14
+    androidCompileSdkVersion = 22
+    supportLibVersion = "22.2.1"
+    androidTargetSdkVersion = androidCompileSdkVersion
+    lib = [
+            androidMinSdk: 'com.google.android:android:4.0.1.2',
+            androidSupportLib: "com.android.support:appcompat-v7:$supportLibVersion",
+            androidBuildToolVersion: "22.0.1",
+            junit: 'junit:junit:4.12',
+            mokito: 'org.mockito:mockito-core:1.9.5',
+            slf4jApi: "org.slf4j:slf4j-api:$log4jVersion",
+            slf4jLog: "org.slf4j:slf4j-log4j12:$log4jVersion",
+            logbackAndroidCore: "com.github.tony19:logback-android-core:$logbackAndroidVersion",
+            logbackAndroidClassic: "com.github.tony19:logback-android-classic:$logbackAndroidVersion",
+            robolectric: "org.robolectric:robolectric:3.0"
+    ]
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
